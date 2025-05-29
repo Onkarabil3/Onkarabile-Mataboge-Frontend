@@ -25,7 +25,7 @@ function addToCart(id) {
       alert(`${product.name} added to cart`);
     })
     .catch(err => {
-      console.error("Error adding to cart:", err); 
+      console.error("Error adding to cart:", err);
       alert("Could not add to cart.");
     });
 }
