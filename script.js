@@ -34,7 +34,7 @@ function addToCart(id) {
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("product-container");
 
-  fetch("/api/products")
+  fetch("https://onkarabile-mataboge-backend-1.onrender.com/api/products")
     .then(res => res.json())
     .then(products => {
       renderProducts(products);

@@ -1,18 +1,18 @@
 :root {
-  --bg: #a8c70d;
+  --bg: #c78f0d;
   --text: #111111;
-  --card-bg: #288fac;
+  --card-bg: #8528ac;
 }
 
 [data-theme="dark"] {
   --bg: #056734;
   --text: #151212;
-  --card-bg: #12b839;
+  --card-bg: #b5b812;
 }
 
 body {
   margin: 4;
-  font-family: Arial, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular';
   background-color: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
