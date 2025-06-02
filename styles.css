@@ -1,17 +1,17 @@
 :root {
-  --bg: #ffffff;
+  --bg: #a8c70d;
   --text: #111111;
-  --card-bg: #f3f3f3;
+  --card-bg: #288fac;
 }
 
 [data-theme="dark"] {
-  --bg: #121212;
-  --text: #f9f9f9;
-  --card-bg: #1f1f1f;
+  --bg: #056734;
+  --text: #151212;
+  --card-bg: #12b839;
 }
 
 body {
-  margin: 0;
+  margin: 4;
   font-family: Arial, sans-serif;
   background-color: var(--bg);
   color: var(--text);
