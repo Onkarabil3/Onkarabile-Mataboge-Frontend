@@ -1,7 +1,7 @@
 :root {
-  --bg: #c78f0d;
+  --bg: #FFFF33;
   --text: #111111;
-  --card-bg: #8528ac;
+  --card-bg: #00CFFF;
 }
 
 [data-theme="dark"] {
@@ -70,3 +70,29 @@ footer {
   padding: 1em;
   background-color: var(--card-bg);
 }
+button {
+  background-color: rgb(192, 108, 24);
+  color: rgb(52, 6, 6);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f2f0eb; /* Slightly darker pink on hover */
+  transform: scale(1.05); /* Slight pop effect */
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.product-card button {
+  display: inline-block;
+  margin-top: 10px;
+}  
