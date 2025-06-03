@@ -1,13 +1,13 @@
 :root {
   --bg:#FFf;
   --text: #111111;
-  --card-bg: #BD7D9B;
+  --card-bg: #ffc0cb;
 }
 
 [data-theme="dark"] {
   --bg:#696969;
   --text: #151212;
-  --card-bg: #6c1960;
+  --card-bg: #902FC1;
 }
 
 
