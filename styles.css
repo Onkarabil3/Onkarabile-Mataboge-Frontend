@@ -1,13 +1,13 @@
 :root {
-  --bg:#00CFFF;
+  --bg:#FFf;
   --text: #111111;
-  --card-bg: #FFFF33;
+  --card-bg: #BD7D9B;
 }
 
 [data-theme="dark"] {
-  --bg: #056734;
+  --bg:#696969;
   --text: #151212;
-  --card-bg: #b5b812;
+  --card-bg: #6c1960;
 }
 
 body {
@@ -71,8 +71,8 @@ footer {
   background-color: var(--card-bg);
 }
 button {
-  background-color: rgb(192, 108, 24);
-  color: rgb(52, 6, 6);
+  background-color:#F9DDDF;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
