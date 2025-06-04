@@ -98,3 +98,14 @@ button:active {
   display: inline-block;
   margin-top: 10px;
 }  
+
+.flowerpic {
+  justify-content: center;
+  padding-left: 30%;
+}
+
+.parag {
+  text-align: center;
+  justify-content: center;
+  padding-right: 4%;
+}
