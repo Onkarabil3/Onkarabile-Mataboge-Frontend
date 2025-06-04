@@ -8,8 +8,12 @@
 <body>
   <header>
     <h1>Checkout</h1>
-   <li><button class="theme-toggle" id="themeToggle">Toggle</button></li>
-    <nav><a href="index.html">← Back to Store</a></nav>
+    <nav>
+      <ul class="nav-menu">
+        <li><button class="theme-toggle" id="themeToggle">Toggle</button></li>
+        <li><a href="index.html">← Back to Store</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -22,48 +26,47 @@
   </main>
 
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const BACKEND_URL = "https://onkarabile-mataboge-backend-1.onrender.com";
-  const form = document.getElementById("checkout-form");
+    document.addEventListener("DOMContentLoaded", function () {
+      const BACKEND_URL = "https://onkarabile-mataboge-backend-1.onrender.com";
+      const form = document.getElementById("checkout-form");
+      if (!form) return;
 
-  if (!form) return; // prevent error if form isn't found
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length === 0) {
+          alert("Your cart is empty.");
+          return;
+        }
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    if (cart.length === 0) {
-      alert("Your cart is empty.");
-      return;
-    }
+        const formData = {
+          name: form.querySelector("input[name='name']").value,
+          email: form.querySelector("input[name='email']").value,
+          address: form.querySelector("textarea[name='address']").value,
+          cartItems: cart
+        };
 
-    const formData = {
-      name: form.querySelector("input[name='name']").value,
-      email: form.querySelector("input[name='email']").value,
-      address: form.querySelector("textarea[name='address']").value,
-      cartItems: cart
-    };
-
-    fetch(`${BACKEND_URL}/api/sale`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      alert("Order confirmed! " + (data.message || ""));
-      localStorage.removeItem("cart");
-      window.location.href = "index.html";
-    })
-    .catch(err => {
-      console.error("Checkout failed:", err);
-      alert("Something went wrong during checkout.");
+        fetch(`${BACKEND_URL}/api/sale`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          alert("Order confirmed! " + (data.message || ""));
+          localStorage.removeItem("cart");
+          window.location.href = "index.html";
+        })
+        .catch(err => {
+          console.error("Checkout failed:", err);
+          alert("Something went wrong during checkout.");
+        });
+      });
     });
-  });
-});
-</script>
-<script src="theme-toggle.js"></script>
-  <script src="script.js"></script>
+  </script>
 
+  <script src="theme-toggle.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

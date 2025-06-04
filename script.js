@@ -30,7 +30,7 @@ function addToCart(id) {
     });
 }
 
-// ⬇️ DOMContentLoaded handles rendering only
+// Ensure this runs once the DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("product-container");
 
